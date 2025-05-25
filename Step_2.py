@@ -10,8 +10,8 @@ import Step_1 as step_1
 # ========================================================================================================================
 # STEP 2: DEFINITE LE DIMENSIONI DEL PENTAGRAMMA (STAFF_WIDTH = LARGHEZZA PENTAGRAMMA, STAFF_HEIGHT = ALTEZZA PENTAGRAMMA)
 # ========================================================================================================================
-STAFF_WIDTH = 500
-STAFF_HEIGHT = 200
+STAFF_WIDTH = 
+STAFF_HEIGHT = 
 
 WIDTH = step_1.WIDTH
 HEIGHT = step_1.HEIGHT

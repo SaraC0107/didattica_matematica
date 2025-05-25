@@ -12,10 +12,10 @@ import Step_3 as step_3
 # ==========================================
 # STEP 4: DEFINITE LE DIMENSIONI DEI BOTTONI
 # ==========================================
-play_button_width = 100 #LARGHEZZA BOTTONE PLAY
-play_button_height = 60#ALTEZZA BOTTONE PLAY
-delete_button_width = 80#LARGHEZZA BOTTONE DELETE
-delete_button_height = 80#ALTEZZA BOTTONE DELETE
+play_button_width =  #LARGHEZZA BOTTONE PLAY
+play_button_height = #ALTEZZA BOTTONE PLAY
+delete_button_width = #LARGHEZZA BOTTONE DELETE
+delete_button_height = #ALTEZZA BOTTONE DELETE
 
 NOTE_MAP = step_3.NOTE_MAP
 
@@ -34,13 +34,16 @@ circles = []
 start_x, gap_y = 60, 75
 
 placed_notes = []
-play_button = Actor("play_button", (WIDTH/2, STAFF_TOP + STAFF_HEIGHT + HEIGHT/1.9))
-# Scale the play_button right after creation
+play_button = Actor("play_button")
 play_button._surf = pygame.transform.smoothscale(play_button._surf, (play_button_width, play_button_height))
+play_button.left = WIDTH / 2 + play_button_width / 2
+play_button.top = HEIGHT / 2 + 100
 play_button._update_pos()
 
-erase_button = Actor("erase_button", (WIDTH/3, play_button.y))
+erase_button = Actor("erase_button")
 erase_button._surf = pygame.transform.smoothscale(erase_button._surf, (delete_button_width, delete_button_height))
+erase_button.left = WIDTH / 2 - 100
+erase_button.top = HEIGHT / 2 + 100
 erase_button._update_pos()
 
 def draw():
@@ -62,6 +65,7 @@ def draw():
     
     for idx, colour in enumerate(NOTE_MAP.keys()):
         a = Actor(f'{colour}', (STAFF_LEFT + WIDTH/2 + idx * 50, STAFF_TOP + STAFF_HEIGHT + HEIGHT/2.75))
+        a.top = HEIGHT/2 + 40
         a._surf = pygame.transform.smoothscale(a._surf, (50, 50))
         a._update_pos()
         a.anchor = ('center', 'center')
@@ -75,15 +79,6 @@ def draw():
     for c in circles:
         c.draw()
 
-    play_button = Actor("play_button", (200, 100))
-    # Scale the play_button right after creation
-    play_button._surf = pygame.transform.smoothscale(play_button._surf, (play_button_width, play_button_height))
-    play_button._update_pos()
-
-    erase_button = Actor("erase_button", (WIDTH/3, play_button.y))
-    erase_button._surf = pygame.transform.smoothscale(erase_button._surf, (delete_button_width, delete_button_height))
-    erase_button._update_pos()
-        
     # Draw play button
     play_button.draw()
     erase_button.draw()

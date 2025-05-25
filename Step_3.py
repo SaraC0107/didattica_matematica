@@ -12,13 +12,13 @@ import Step_2 as step_2
 # STEP 3: ASSOCIATE I COLORI AI NOMI DELLE NOTE: red,green,blue,yellow,purple,orange, pink.
 # =============================================
 NOTE_MAP = {
-    'red':    ('DO','do'),
-    'blue':    ('RE', 're'),
-    'orange':    ('MI', 'mi'),
-    'purple':    ('FA', 'fa'),
-    'yellow':    ('SOL', 'sol'),
-    'green':    ('LA', 'la'),
-    'pink':    ('SI', 'si'),
+    '':    ('DO','do'),
+    '':    ('RE', 're'),
+    '':    ('MI', 'mi'),
+    '':    ('FA', 'fa'),
+    '':    ('SOL', 'sol'),
+    '':    ('LA', 'la'),
+    '':    ('SI', 'si'),
 }
 
 WIDTH = step_1.WIDTH

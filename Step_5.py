@@ -36,13 +36,16 @@ circles = []
 start_x, gap_y = 60, 75
 
 placed_notes = []
-play_button = Actor("play_button", (WIDTH - 25, HEIGHT+100))
-# Scale the play_button right after creation
-play_button._surf = pygame.transform.smoothscale(play_button._surf, (80, 60))
+play_button = Actor("play_button")
+play_button._surf = pygame.transform.smoothscale(play_button._surf, (play_button_width, play_button_height))
+play_button.left = WIDTH / 2 + play_button_width / 2
+play_button.top = HEIGHT / 2 + 100
 play_button._update_pos()
 
-erase_button = Actor("erase_button", (play_button.x, play_button.y))
-erase_button._surf = pygame.transform.smoothscale(erase_button._surf, (100, 60))
+erase_button = Actor("erase_button")
+erase_button._surf = pygame.transform.smoothscale(erase_button._surf, (delete_button_width, delete_button_height))
+erase_button.left = WIDTH / 2 - 100
+erase_button.top = HEIGHT / 2 + 100
 erase_button._update_pos()
 
 def draw():
@@ -64,6 +67,7 @@ def draw():
     
     for idx, colour in enumerate(NOTE_MAP.keys()):
         a = Actor(f'{colour}', (STAFF_LEFT + WIDTH/2 + idx * 50, STAFF_TOP + STAFF_HEIGHT + HEIGHT/2.75))
+        a.top = HEIGHT/2 + 40
         a._surf = pygame.transform.smoothscale(a._surf, (50, 50))
         a._update_pos()
         a.anchor = ('center', 'center')
@@ -76,15 +80,6 @@ def draw():
     # Draw draggable circles below staff
     for c in circles:
         c.draw()
-        
-    play_button = Actor("play_button", (WIDTH - 25, HEIGHT+100))
-    # Scale the play_button right after creation
-    play_button._surf = pygame.transform.smoothscale(play_button._surf, (play_button_width, play_button_height))
-    play_button._update_pos()
-
-    erase_button = Actor("erase_button", (play_button.x, play_button.y))
-    erase_button._surf = pygame.transform.smoothscale(erase_button._surf, (delete_button_width, delete_button_height))
-    erase_button._update_pos()
         
     # Draw play button
     play_button.draw()
@@ -103,7 +98,7 @@ def on_mouse_down(pos):
     for c in reversed(circles):
         if c.collidepoint(pos):
             x_pos = STAFF_LEFT + 175 + len(placed_notes) * 60
-            y_pos = STAFF_TOP + 275
+            y_pos = STAFF_TOP + 250
             new_note = Actor(f"{c.colour_name}", (x_pos, y_pos))
             new_note._surf = pygame.transform.smoothscale(new_note._surf, (50, 50))
             new_note._update_pos()
