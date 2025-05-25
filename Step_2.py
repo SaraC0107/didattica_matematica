@@ -1,3 +1,5 @@
+import os
+os.environ['SDL_VIDEO_CENTERED'] = '1'
 import pygame
 import pgzrun
 from pgzero.builtins import Actor
