@@ -9,8 +9,8 @@ import time
 # ============================================================================================
 # STEP 1: DEFINITE LE DIMENSIONI DELLA FINESTRA DI GIOCO (WIDTH = LARGHEZZA, HEIGHT = ALTEZZA)
 # ============================================================================================
-WIDTH =
-HEIGHT =
+WIDTH =500
+HEIGHT =300
 
 background = pygame.image.load("images/background.jpg")
 background = pygame.transform.smoothscale(background, (WIDTH, HEIGHT))

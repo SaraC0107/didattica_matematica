@@ -63,7 +63,7 @@ def draw():
     screen.draw.line((STAFF_LEFT, line2_y), (STAFF_LEFT + STAFF_WIDTH, line2_y), (0, 0, 0))
     
     for idx, colour in enumerate(NOTE_MAP.keys()):
-        a = Actor(f'{colour}', (STAFF_LEFT + 550 + idx * 50, STAFF_TOP + STAFF_HEIGHT + 250))
+        a = Actor(f'{colour}', (STAFF_LEFT + WIDTH/2 + idx * 50, STAFF_TOP + STAFF_HEIGHT + HEIGHT/2.75))
         a._surf = pygame.transform.smoothscale(a._surf, (50, 50))
         a._update_pos()
         a.anchor = ('center', 'center')

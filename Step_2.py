@@ -10,7 +10,8 @@ import Step_1 as step_1
 # ========================================================================================================================
 # STEP 2: DEFINITE LE DIMENSIONI DEL PENTAGRAMMA (STAFF_WIDTH = LARGHEZZA PENTAGRAMMA, STAFF_HEIGHT = ALTEZZA PENTAGRAMMA)
 # ========================================================================================================================
-STAFF_WIDTH, STAFF_HEIGHT = 
+STAFF_WIDTH = 500
+STAFF_HEIGHT = 200
 
 WIDTH = step_1.WIDTH
 HEIGHT = step_1.HEIGHT
@@ -18,7 +19,7 @@ HEIGHT = step_1.HEIGHT
 background = pygame.image.load("images/background.jpg")
 background = pygame.transform.smoothscale(background, (WIDTH, HEIGHT))
 
-STAFF_TOP, STAFF_LEFT = 50, 0
+STAFF_TOP, STAFF_LEFT = 0, 0
 staff_rect = Rect((STAFF_LEFT, STAFF_TOP), (STAFF_WIDTH, STAFF_HEIGHT))
 
 def draw():

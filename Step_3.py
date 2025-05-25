@@ -9,16 +9,16 @@ import Step_1 as step_1
 import Step_2 as step_2
 
 # =============================================
-# STEP 3: ASSOCIATE I COLORI AI NOMI DELLE NOTE
+# STEP 3: ASSOCIATE I COLORI AI NOMI DELLE NOTE: red,green,blue,yellow,purple,orange, pink.
 # =============================================
 NOTE_MAP = {
-    '':    ('DO','do'),
-    '':    ('RE', 're'),
-    '':    ('MI', 'mi'),
-    '':    ('FA', 'fa'),
-    '':    ('SOL', 'sol'),
-    '':    ('LA', 'la'),
-    '':    ('SI', 'si'),
+    'red':    ('DO','do'),
+    'blue':    ('RE', 're'),
+    'orange':    ('MI', 'mi'),
+    'purple':    ('FA', 'fa'),
+    'yellow':    ('SOL', 'sol'),
+    'green':    ('LA', 'la'),
+    'pink':    ('SI', 'si'),
 }
 
 WIDTH = step_1.WIDTH
@@ -53,7 +53,7 @@ def draw():
     screen.draw.line((STAFF_LEFT, line2_y), (STAFF_LEFT + STAFF_WIDTH, line2_y), (0, 0, 0))
     
     for idx, colour in enumerate(NOTE_MAP.keys()):
-        a = Actor(f'{colour}', (STAFF_LEFT + 450 + idx * 50, STAFF_TOP + STAFF_HEIGHT + 250))
+        a = Actor(f'{colour}', (STAFF_LEFT + WIDTH/2 + idx * 50, STAFF_TOP + STAFF_HEIGHT + HEIGHT/2.75))
         a._surf = pygame.transform.smoothscale(a._surf, (50, 50))
         a._update_pos()
         a.anchor = ('center', 'center')
