@@ -9,7 +9,7 @@ import Step_1 as step_1
 import Step_2 as step_2
 
 # =============================================
-# STEP 3: ASSOCIATE I COLORI AI NOMI DELLE NOTE: red,green,blue,yellow,purple,orange, pink.
+# STEP 3: ASSOCIATE I COLORI AI NOMI DELLE NOTE: red,green,blue,yellow,purple,orange,pink.
 # =============================================
 NOTE_MAP = {
     '':    ('DO','do'),

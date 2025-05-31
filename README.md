@@ -6,7 +6,7 @@ Attività pensata per essere svolta in gruppi di 2-3 alunni con un computer cond
 
 Requisiti tecnici
 
-- Coursor 
+- Cursor
 - Anaconda
 - Libreria Pygame Zero (`pip install pgzero`)
 
